@@ -10,6 +10,9 @@ data = {
         {"id": 3, "name": "Charlie", "age": 35}
     ]
 }
+@app.route('/static/<path:filename>')
+def static_files(filename):
+    return send_from_directory('static', filename)
 
 # Маршрут для получения всех пользователей
 @app.route('/api/users', methods=['GET'])
